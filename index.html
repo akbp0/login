@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SimpleFlow - Sign Up</title>
+    <link rel="stylesheet" href="CSS/styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Left Blue Card -->
+        <div class="left-card">
+            <div class="content-wrapper">
+                <div class="top-section">
+                    <h1>Welcome to SimpleFlow</h1>
+                    <p>Your Gateway to Effortless Management.</p>
+                </div>
+                <div class="bottom-section">
+                    <h2>Seamless Collaboration</h2>
+                    <p>Effortlessly work together with your team in real-time.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Form Card -->
+        <div class="right-card">
+            <div class="logo-section">
+                <svg class="logo-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2C12 2 6 8 6 13C6 16.866 9.134 20 13 20C16.866 20 20 16.866 20 13C20 8 14 2 14 2C13.5 2.5 12 2 12 2Z" fill="#465FF1" transform="rotate(-15 12 11)"/>
+                </svg>
+                <span class="logo-text">SimpleFlow</span>
+            </div>
+
+            <div class="tab-section">
+                <button class="tab active" id="signupTab">Sign Up</button>
+                <button class="tab" id="signinTab">Sign In</button>
+            </div>
+
+            <form id="signupForm">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" placeholder="Pick a Username">
+                    <span class="error-message" id="usernameError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="fullname">Full Name</label>
+                    <input type="text" id="fullname" name="fullname" placeholder="Enter Your Name">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter Your Email Address">
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <a href="#" class="forgot-password">Forgot Password?</a>
+                    <input type="password" id="password" name="password" placeholder="Enter Password">
+                    <div class="password-requirements">
+                        <div class="requirement" id="strengthReq">
+                            <span class="check-icon">✓</span>
+                            <span class="req-text">Password Strength : Weak</span>
+                        </div>
+                        <div class="requirement" id="nameReq">
+                            <span class="check-icon">✓</span>
+                            <span class="req-text">Cannot contain your name or email address</span>
+                        </div>
+                        <div class="requirement" id="lengthReq">
+                            <span class="check-icon">✓</span>
+                            <span class="req-text">At least 8 characters</span>
+                        </div>
+                        <div class="requirement" id="symbolReq">
+                            <span class="check-icon">✓</span>
+                            <span class="req-text">Contains a number or symbol</span>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn" id="submitBtn">Create Account</button>
+
+                <div class="success-message" id="successMessage">Account Created Successfully!</div>
+            </form>
+
+            <div class="terms-text">
+                By signing up to create an account I accept Company's<br>
+                <a href="#">Terms of use</a> & <a href="#">Privacy Policy</a>.
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

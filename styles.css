@@ -1,0 +1,356 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: #F5F5F5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    display: flex;
+    gap: 192px;
+    max-width: 1440px;
+    width: 100%;
+    position: relative;
+}
+
+/* Left Blue Card */
+.left-card {
+    width: 676px;
+    height: 960px;
+    background: linear-gradient(135deg, rgba(70, 95, 241, 0.9) 0%, rgba(42, 67, 204, 0.9) 100%),
+                url('../images/background.jpg') center/cover no-repeat;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    padding: 60px;
+}
+
+.left-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        repeating-linear-gradient(90deg, rgba(255,255,255,0.03) 0px, rgba(255,255,255,0.03) 1px, transparent 1px, transparent 60px),
+        repeating-linear-gradient(0deg, rgba(255,255,255,0.03) 0px, rgba(255,255,255,0.03) 1px, transparent 1px, transparent 60px);
+    opacity: 0.5;
+}
+
+.left-card::after {
+    content: '';
+    position: absolute;
+    width: 800px;
+    height: 800px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    top: -200px;
+    left: -200px;
+}
+
+.content-wrapper {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.top-section h1 {
+    font-size: 48px;
+    font-weight: 700;
+    color: #E3E3E3;
+    margin-bottom: 16px;
+    line-height: 1.2;
+}
+
+.top-section p {
+    font-size: 20px;
+    color: #E3E3E3;
+    font-weight: 400;
+}
+
+.bottom-section {
+    margin-bottom: 80px;
+}
+
+.bottom-section h2 {
+    font-size: 48px;
+    font-weight: 700;
+    color: #E3E3E3;
+    margin-bottom: 24px;
+    line-height: 1.2;
+}
+
+.bottom-section p {
+    font-size: 20px;
+    color: #E3E3E3;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+/* Right Form Card */
+.right-card {
+    width: 358px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding-top: 134px;
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+.logo-icon {
+    width: 32px;
+    height: 32px;
+}
+
+.logo-text {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1A1A1A;
+}
+
+.tab-section {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+.tab {
+    flex: 1;
+    padding: 12px 24px;
+    border: none;
+    background: #F0F0F0;
+    color: #999999;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tab.active {
+    background: #465FF1;
+    color: white;
+}
+
+.form-group {
+    margin-bottom: 24px;
+    position: relative;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #1A1A1A;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #D1D5DB;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #1A1A1A;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #465FF1;
+}
+
+.form-group input.error {
+    border-color: #EF4444;
+}
+
+.error-message {
+    display: none;
+    color: #EF4444;
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+.error-message.show {
+    display: block;
+}
+
+.forgot-password {
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 12px;
+    color: #999999;
+    text-decoration: none;
+}
+
+.forgot-password:hover {
+    color: #465FF1;
+}
+
+.password-requirements {
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.requirement {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: #666666;
+}
+
+.check-icon {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 1px solid #D1D5DB;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    color: transparent;
+    flex-shrink: 0;
+}
+
+.requirement.valid .check-icon {
+    background: #15803D;
+    border-color: #15803D;
+    color: white;
+}
+
+.requirement.invalid .check-icon {
+    background: #EF4444;
+    border-color: #EF4444;
+    color: white;
+}
+
+.requirement.invalid .req-text {
+    color: #EF4444;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 14px;
+    background: #465FF1B2;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 16px;
+}
+
+.submit-btn:hover {
+    background: #465FF1;
+}
+
+.submit-btn.submitted {
+    background: #465FF1;
+}
+
+.success-message {
+    display: none;
+    color: #15803D;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.success-message.show {
+    display: block;
+}
+
+.terms-text {
+    font-size: 11px;
+    color: #999999;
+    text-align: center;
+    line-height: 1.6;
+    margin-top: 40px;
+}
+
+.terms-text a {
+    color: #465FF1;
+    text-decoration: none;
+}
+
+.terms-text a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 1200px) {
+    .container {
+        gap: 100px;
+    }
+
+    .left-card {
+        width: 500px;
+        height: 800px;
+    }
+}
+
+@media (max-width: 992px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+
+    .left-card {
+        width: 100%;
+        max-width: 600px;
+        height: 600px;
+    }
+
+    .right-card {
+        padding-top: 0;
+        max-width: 400px;
+    }
+}
+
+@media (max-width: 480px) {
+    .left-card {
+        height: 500px;
+        padding: 40px 30px;
+    }
+
+    .top-section h1,
+    .bottom-section h2 {
+        font-size: 32px;
+    }
+
+    .top-section p,
+    .bottom-section p {
+        font-size: 16px;
+    }
+
+    .right-card {
+        width: 100%;
+    }
+}
