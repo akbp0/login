@@ -16,13 +16,15 @@ body {
 
 .container {
     display: flex;
+    flex-direction: row;
     gap: 192px;
     max-width: 1440px;
     width: 100%;
     position: relative;
+    align-items: flex-start;
 }
 
-/* Left Blue Card */
+/* Left Blue Card - Must be on LEFT */
 .left-card {
     width: 676px;
     height: 960px;
@@ -32,6 +34,8 @@ body {
     position: relative;
     overflow: hidden;
     padding: 60px;
+    flex-shrink: 0;
+    order: 1;
 }
 
 .left-card::before {
@@ -101,13 +105,15 @@ body {
     line-height: 1.6;
 }
 
-/* Right Form Card */
+/* Right Form Card - Must be on RIGHT */
 .right-card {
     width: 358px;
     display: flex;
     flex-direction: column;
     gap: 32px;
     padding-top: 134px;
+    flex-shrink: 0;
+    order: 2;
 }
 
 .logo-section {
@@ -326,11 +332,13 @@ body {
         width: 100%;
         max-width: 600px;
         height: 600px;
+        order: 1;
     }
 
     .right-card {
         padding-top: 0;
         max-width: 400px;
+        order: 2;
     }
 }
 
